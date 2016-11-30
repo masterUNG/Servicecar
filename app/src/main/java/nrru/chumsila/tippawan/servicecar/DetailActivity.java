@@ -1,9 +1,12 @@
 
 package nrru.chumsila.tippawan.servicecar;
 
-import android.support.v4.app.FragmentActivity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -20,7 +23,9 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
     //
     private GoogleMap mMap;
     private String[] strings;
-    private TextView shopTextView,addressTextView,phoneTextView,serviceTextView;
+    private TextView shopTextView,addressTextView,
+            phoneTextView,serviceTextView;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         addressTextView=(TextView)findViewById(R.id.textView9);
         phoneTextView=(TextView)findViewById(R.id.textView10);
         serviceTextView=(TextView)findViewById(R.id.textView11);
+        imageView = (ImageView) findViewById(R.id.imageView2);
 
         //get value
         strings = getIntent().getStringArrayExtra("Shop");
@@ -42,12 +48,32 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         phoneTextView.setText("Phone :  "  + strings[2]);
         serviceTextView.setText("บริการ  : " + strings[3]);
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Action Call
+                try {
+
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:=" + strings[2]));
+                    startActivity(intent);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-    }// เม็ตตอด
+    }// Main Method
+
+
 
     public void clickBackDetail(View view){
         finish();

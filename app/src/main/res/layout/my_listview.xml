@@ -78,14 +78,14 @@
         android:layout_marginLeft="10dp"
         android:textColor="@color/bright_foreground_inverse_material_dark" />
 
-    <Button
-        android:text="@string/Tel"
-        android:layout_width="134dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
-        android:textSize="@dimen/h2"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@color/background_floating_material_dark"
-        android:textColor="@color/bright_foreground_material_dark" />
+    <!--<Button-->
+        <!--android:text="@string/Tel"-->
+        <!--android:layout_width="134dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/button4"-->
+        <!--android:textSize="@dimen/h2"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:background="@color/background_floating_material_dark"-->
+        <!--android:textColor="@color/bright_foreground_material_dark" />-->
 </LinearLayout>
