@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Service Cars</string>
+    <string name="title_activity_maps">ซ่อมไหนดี </string>
+
+    <string name="listview">รายชื่อร้าน</string>
+    <string name="search">ค้นหา</string>
+
+    <string name="service">บริการ :</string>
+    <string name="address">ที่อยู่ :</string>
+    <string name="title_activity_detail">Map</string>
+
+    <string name="BACK">กลับ</string>
+    <string name="Tel">โทรออก</string>
+</resources>

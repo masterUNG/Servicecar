@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/p4">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linBotton">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ค้นหา"
+            android:onClick="clickSearchShop"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:background="@color/bright_foreground_inverse_material_dark"
+            android:textColor="@color/bright_foreground_material_dark"
+            android:textSize="20dp"
+            android:singleLine="false" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/listview"
+            android:onClick="clickListShpo"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:textColor="@color/bright_foreground_material_dark"
+            android:background="@color/common_google_signin_btn_text_dark_focused" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/textView"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="nrru.chumsila.tippawan.servicecar.MapsActivity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_above="@+id/linBotton" />
+
+
+</RelativeLayout>
