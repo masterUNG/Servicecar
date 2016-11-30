@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class SearchShop extends AppCompatActivity implements SearchView.OnQueryTextListener {
@@ -23,9 +26,34 @@ public class SearchShop extends AppCompatActivity implements SearchView.OnQueryT
 
         // Generate sample data
 
-        animalNameList = new String[]{"Lion", "Tiger", "Dog",
-                "Cat", "Tortoise", "Rat", "Elephant", "Fox",
-                "Cow","Donkey","Monkey"};
+//        animalNameList = new String[]{"Lion", "Tiger", "Dog",
+//                "Cat", "Tortoise", "Rat", "Elephant", "Fox",
+//                "Cow","Donkey","Monkey"};
+
+        try {
+
+            MySynShop mySynShop = new MySynShop(SearchShop.this);
+            mySynShop.execute();
+
+            String strJSoN = mySynShop.get();
+
+            JSONArray jsonArray = new JSONArray(strJSoN);
+
+            animalNameList = new String[jsonArray.length()];
+
+            for (int i=0;i<jsonArray.length();i++) {
+
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                animalNameList[i] = jsonObject.getString("Shop");
+
+            }   // for
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // Locate the ListView in listview_main.xml
         list = (ListView) findViewById(R.id.listview);
