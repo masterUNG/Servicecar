@@ -3,8 +3,8 @@ package nrru.chumsila.tippawan.servicecar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -58,7 +58,7 @@ public class ListShpo extends AppCompatActivity {
         //สร้างวิว
         try {
 
-            MyAdapter myAdapter =new MyAdapter(this,shopStrings,serviceStrings,addressStrings,imageStrings);
+            MyAdapter myAdapter = new MyAdapter(this, shopStrings, serviceStrings, addressStrings, imageStrings);
             listView.setAdapter(myAdapter);
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -83,8 +83,7 @@ public class ListShpo extends AppCompatActivity {
             });
 
 
-
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
